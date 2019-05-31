@@ -15,6 +15,11 @@
 ## 阅读对象
 本文档面向所有使用一点资讯开屏SDK的开发、测试人员等, 要求读者具有一定的Android编程开发经验。
 
+<p>
+	<img src="http://si1.go2yd.com/get-image/0XNCGH6mRRA" width="70%" height="70%"/>
+</p>
+
+
 ## 1.产品概述
 
 一点资讯开放平台Android SDK是一点资讯Android开发团队推出的Android平台上的开屏广告开发集成包(SDK)，为Android开发者提供简单、快捷的接口，帮助开发者快速实现Android平台上的开屏。
