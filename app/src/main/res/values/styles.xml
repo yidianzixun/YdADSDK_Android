@@ -1,0 +1,14 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="WindowFullscreen" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+</resources>

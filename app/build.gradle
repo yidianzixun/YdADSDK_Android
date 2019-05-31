@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.yidian.adsdkdemo"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        buildConfigField("String", "UMENG_KEY", "\"5ce652ad570df343f30006d7\"")
+        buildConfigField("String", "CHANNEL", "\"demo\"")
+        buildConfigField("String", "AD_APP_ID", "\"BJxR-1QU3G6vmhgC1250dA2l\"")
+        buildConfigField("String", "AD_APP_KEY", "\"RFS0SjbzDnQVm61xRt310nRI5XtptCq8\"")
+
+        buildConfigField("String", "GEEK_APP_ID", "\"YrFcmZY6dwl1c78xzgPw1Adw\"")
+        buildConfigField("String", "GEEK_APP_KEY", "\"0P6ycPBdVH4llsnFie69VmV9iomaS9Aa\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'   // aar目录
+    }
+}
+
+dependencies {
+
+    //必选项
+    implementation "org.greenrobot:greendao:3.2.2"
+    implementation("com.android.support:recyclerview-v7:${rootProject.ext.supportVersion}")
+    implementation 'com.yidian.android:adsdk:1.0.0'
+
+    //非必选项
+    implementation 'com.yidian.android:feeds:1.1.0'
+    implementation("com.android.support:support-fragment:${rootProject.ext.supportVersion}")
+    implementation("com.android.support:support-annotations:${rootProject.ext.supportVersion}")
+    implementation 'com.umeng.analytics:analytics:6.1.2'
+}
