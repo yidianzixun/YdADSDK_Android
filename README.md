@@ -116,6 +116,7 @@ new SplashAD.Builder()
 | setAdContainerRes(@IdRes int adContainer)  | 设置开屏广告的容器 |
 | setSplashADListener(SplashADListener splashADListener)  | 设置开屏SDK的回调接口 |
 | setSplashlogo(@DrawableRes int splashlogo) | 设置需要展示的logo  |
+| setBottomViewDismiss(boolean bottomViewDismiss) | 设置是否需要隐藏底栏  |
 
 SplashAdListener接口方法如下：
 
