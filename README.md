@@ -1,8 +1,8 @@
 # 一点资讯开屏广告SDK-Android
 
 <p align="center">
-   <a href="https://jcenter.bintray.com/com/yidian/android/adsdk/1.0.0/">
-    <img src="https://img.shields.io/badge/Jcenter-v1.0.0-brightgreen.svg?style=flat-square" alt="Latest Stable Version" />
+   <a href="https://jcenter.bintray.com/com/yidian/android/adsdk/1.1.0/">
+    <img src="https://img.shields.io/badge/Jcenter-v1.1.0-brightgreen.svg?style=flat-square" alt="Latest Stable Version" />
 
   </a>
   <a href="https://developer.android.com/about/versions/android-4.1.html">
@@ -121,6 +121,7 @@ new SplashAD.Builder()
 SplashAdListener接口方法如下：
 
 ``` java
+//1.1.0以下版本
 public interface SplashADListener {
 
     /**
@@ -129,6 +130,37 @@ public interface SplashADListener {
      * 2、点击广告进入广告落地页且从落地页back回去
      */
     void onADDismiss();
+
+    /**
+     * 广告展示时回调
+     */
+    void onADPresent();
+
+    /**
+     * 点击开屏广告时回调
+     */
+    void onADScreenClick();
+
+    /**
+     * 广告展示失败时回调
+     */
+    void onADFail();
+}
+```
+
+``` java
+//1.1.0及以上版本
+public interface SplashADListener {
+
+    /**
+     * 广告展示时间结束
+     */
+    void onADTimeOver();
+
+    /**
+     * 点击跳过按钮
+     */
+    void onADSkip();
 
     /**
      * 广告展示时回调
