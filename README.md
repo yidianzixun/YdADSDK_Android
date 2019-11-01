@@ -68,7 +68,7 @@ dependencies {
    //必选项
     implementation "org.greenrobot:greendao:3.2.2"
     implementation("com.android.support:recyclerview-v7:${rootProject.ext.supportVersion}")
-    implementation 'com.yidian.android:adsdk:1.2.0'
+    implementation 'com.yidian.android:adsdk:1.2.1'
      implementation "pl.droidsonroids.gif:android-gif-drawable:${rootProject.ext.gifDrawable}"
 }
 ```
