@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnAdload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加载广告"
+        android:textSize="14sp" />
+
+    <com.yidian.geek.addemo.view.LoadMoreListView
+        android:id="@+id/feedAdListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.yidian.geek.addemo.view.LoadMoreListView>
+
+
+</LinearLayout>

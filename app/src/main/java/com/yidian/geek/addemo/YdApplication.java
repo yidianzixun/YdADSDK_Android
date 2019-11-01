@@ -2,9 +2,12 @@ package com.yidian.geek.addemo;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
+
 import com.umeng.analytics.MobclickAgent;
 import com.yidian.adsdk.AdSDK;
 import com.yidian.adsdkdemo.BuildConfig;
+import com.yidian.geek.addemo.helper.YdMediaIjkPlayer;
 import com.yidian.newssdk.NewsFeedsSDK;
 
 /**
@@ -18,6 +21,7 @@ public class YdApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
     @Override
@@ -40,10 +44,11 @@ public class YdApplication extends Application {
          * 初始化SDK
          */
         new AdSDK.Builder()
-                .setAppId(BuildConfig.AD_APP_ID)
-                .setAppKey(BuildConfig.AD_APP_KEY)
+                .setAppId(BuildConfig.AD_APP_ID)//申请的appid
+                .setAppKey(BuildConfig.AD_APP_KEY)//申请的appkey
                 .setContext(getApplicationContext())
-                .setDebugEnabled(false)
+                .setDebugEnabled(BuildConfig.DEBUG)//是否开启debug日志
+                .setCustomMediaPlayer(new YdMediaIjkPlayer())//默认使用系统播放器，这里可以设置使用IjkPlayer
                 .build();
 
         new NewsFeedsSDK.Builder()

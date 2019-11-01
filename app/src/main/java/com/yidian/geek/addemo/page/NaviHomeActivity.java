@@ -8,7 +8,6 @@ import com.yidian.adsdkdemo.R;
 import com.yidian.geek.addemo.helper.BackSupport;
 import com.yidian.newssdk.exportui.NewsPortalFragment;
 
-
 public class NaviHomeActivity extends FragmentActivity {
 
     private final BackSupport mBackSupport = new BackSupport();

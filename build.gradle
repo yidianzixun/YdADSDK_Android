@@ -31,6 +31,7 @@ task clean(type: Delete) {
 
 ext {
     supportVersion = "26.1.0"
+    gifDrawable = "1.1.17"
     compileSdkVersion = 26
     buildToolsVersion = "26.1.0"
     minSdkVersion = 16

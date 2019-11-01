@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/splashBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开屏广告" />
+
+    <Button
+        android:id="@+id/feedViewBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="信息流广告---单个View页面" />
+
+    <Button
+        android:id="@+id/feedRecyclerViewBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="信息流广告---RecyclerView页面" />
+
+    <Button
+        android:id="@+id/feedListiewBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="信息流广告---ListView页面" />
+
+    <TextView
+        android:id="@+id/adVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:gravity="center_horizontal" />
+
+</LinearLayout>

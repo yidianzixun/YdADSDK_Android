@@ -3,10 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white_ffffff">
 
 
     <ImageView
+        android:id="@+id/logoImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher"
@@ -16,9 +18,6 @@
         android:id="@+id/adContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </FrameLayout>
-
-
 
 </FrameLayout>
