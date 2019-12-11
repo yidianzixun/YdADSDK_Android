@@ -240,10 +240,9 @@ public class FeedAdRecyclerViewTestActivity extends FragmentActivity implements 
             nativeExpressAd.onbind(adapter);
             View video = nativeExpressAd.getAdView();
             if (video != null) {
-                if (video.getParent() == null) {
-                    nativeContainer.removeAllViews();
-                    nativeContainer.addView(video);
-                }
+                cleanParent(video);
+                nativeContainer.removeAllViews();
+                nativeContainer.addView(video);
             }
         }
 

@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -225,13 +227,12 @@ public class FeedAdListViewTestActivity extends FragmentActivity implements View
                 if (adViewHolder.adContainer != null) {
                     //获取视频播放view,该view SDK内部渲染，在媒体平台可配置视频是否自动播放等设置。
                     View video = nativeExpressAd.getAdView();
+                    //请务必调用此方法，feedAdAdapter
+                    nativeExpressAd.onbind(feedAdAdapter);
                     if (video != null) {
-                        if (video.getParent() == null) {
-                            //请务必调用此方法，不然影响广告收益
-                            nativeExpressAd.onbind(feedAdAdapter);
-                            adViewHolder.adContainer.removeAllViews();
-                            adViewHolder.adContainer.addView(video);
-                        }
+                        cleanParent(video);
+                        adViewHolder.adContainer.removeAllViews();
+                        adViewHolder.adContainer.addView(video);
                     }
                 }
             } catch (Exception e) {
@@ -264,5 +265,16 @@ public class FeedAdListViewTestActivity extends FragmentActivity implements View
         }
     }
 
-
+    private static void cleanParent(View view) {
+        if (view.getParent() == null) {
+            return;
+        }
+        if (view.getParent() instanceof FrameLayout) {
+            ((FrameLayout) view.getParent()).removeAllViews();
+        } else if (view.getParent() instanceof LinearLayout) {
+            ((LinearLayout) view.getParent()).removeAllViews();
+        } else if (view.getParent() instanceof RelativeLayout) {
+            ((RelativeLayout) view.getParent()).removeAllViews();
+        }
+    }
 }
